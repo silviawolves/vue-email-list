@@ -14,14 +14,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
 
 </head>
+
 <body>
 
     <div id="app">
         <div class="container">
+            <ul>
+                <li v-for="element in arrayMail">{{ element }}</li>
+            </ul>
 
-
-
-
+            <button class="btn btn-success" @click="randomMail()">Genera</button>
         </div>
     </div>
 

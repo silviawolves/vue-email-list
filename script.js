@@ -1,6 +1,25 @@
 'use strict'
 
+new Vue({
+    el: '#app',
+    data: {
+        mailGenerata: null,
+        arrayMail: [],
+    },
+    methods: {
+        randomMail() {
+            this.arrayMail = []
+            for (let i = 0; i < 10; i++) {
 
+            axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
+                .then((risultato) => {
+                    this.mailGenerata = risultato.data.response
+                    this.arrayMail.push(this.mailGenerata)
+                })
+            }
+        },
+    },
+})
 
 
 
