@@ -5,6 +5,8 @@ new Vue({
     data: {
         mailGenerata: null,
         arrayMail: [],
+        contatore: 0,
+        cicloFinito: false,
     },
     methods: {
         randomMail() {
@@ -15,9 +17,15 @@ new Vue({
                 .then((risultato) => {
                     this.mailGenerata = risultato.data.response
                     this.arrayMail.push(this.mailGenerata)
+                    this.controlloLista()
                 })
             }
         },
+        controlloLista() {
+            if (this.arrayMail.length === 10) {
+                this.cicloFinito = true
+            }
+        }
     },
 })
 

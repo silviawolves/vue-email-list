@@ -20,7 +20,9 @@
     <div id="app">
         <div class="container">
             <ul>
-                <li v-for="element in arrayMail">{{ element }}</li>
+                <template v-if="cicloFinito">
+                    <li v-for="element in arrayMail">{{ element }}</li>
+                </template>
             </ul>
 
             <button class="btn btn-success" @click="randomMail()">Genera</button>
